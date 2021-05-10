@@ -1,0 +1,33 @@
+{
+  "name": "twitter-api",
+  "author": "",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build:types": "NODE_ENV=production tsc",
+    "build:types:watch": "NODE_ENV=production tsc --watch",
+    "build:js": "NODE_ENV=production node ./esbuild/build.js",
+    "build:js:watch": "NODE_ENV=production node ./esbuild/watch.js",
+    "build": "yarn build:types && yarn build:js",
+    "dev": "ts-node ./lib/index.js"
+  },
+  "license": "ISC",
+  "files": [
+    "./lib/*"
+  ],
+  "typings": "./lib/index.d.ts",
+  "devDependencies": {
+    "@types/node-fetch": "2.5.10",
+    "@types/request": "2.48.5",
+    "dotenv": "8.6.0",
+    "esbuild": "0.11.20",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.4"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "oauth-1.0a": "^2.2.6",
+    "querystring": "^0.2.1"
+  }
+}
