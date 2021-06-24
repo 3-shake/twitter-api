@@ -1,8 +1,7 @@
 {
-  "name": "twitter-api",
+  "name": "@3-shake/twitter-api",
   "author": "locona(miyamae@3-shake.com)",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
   "main": "./lib/index.js",
   "scripts": {
     "build:types": "NODE_ENV=production tsc",
@@ -14,6 +13,13 @@
     "release": "shipjs prepare"
   },
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3-shake/twitter-api.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "files": [
     "./lib/*"
   ],
