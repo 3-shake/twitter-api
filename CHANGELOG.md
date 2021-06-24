@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/3-shake/twitter-api/compare/v0.2.1...v0.2.2) (2021-06-24)
+
+
+### Bug Fixes
+
+* クライアント側で失敗するため修正 ([#6](https://github.com/3-shake/twitter-api/issues/6)) ([247d5c0](https://github.com/3-shake/twitter-api/commit/247d5c0a920e3967818c9632da8b674fcc1160c2))
+
+
+
 ## [0.2.1](https://github.com/3-shake/twitter-api/compare/v0.2.0...v0.2.1) (2021-06-24)
 
 
