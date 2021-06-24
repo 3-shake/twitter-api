@@ -25,6 +25,7 @@
         "experimentalDecorators": true,
         "downlevelIteration": true,
         "declaration": true,
+        "declarationDir": "lib/types",
         "esModuleInterop": true,
         "pretty": true
     },
