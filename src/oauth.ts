@@ -64,6 +64,7 @@ export class TwitterOAuth {
   async authorizeURL(oauthToken: OAuthToken): Promise<string> {
     const baseURL = new URL('https://api.twitter.com/oauth/authorize')
     baseURL.searchParams.append('oauth_token', oauthToken.oauth_token)
+    baseURL.searchParams.append('force_login', 'true')
     return baseURL.href
   }
 
