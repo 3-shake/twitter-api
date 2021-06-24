@@ -1,6 +1,13 @@
 import fetch, { Response } from 'node-fetch'
 import { ServiceObject } from './service'
 import { Twitter } from './twitter'
+import {
+  Expansions,
+  MediaFields,
+  PollFields,
+  TweetFields,
+  UserFields,
+} from './type'
 
 export interface ListTweetsResponse extends Response {
   json(): Promise<{

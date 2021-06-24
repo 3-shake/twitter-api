@@ -1,4 +1,5 @@
 import { Response } from 'node-fetch'
+import { Pagination } from './type'
 
 export interface ServiceConfig {}
 

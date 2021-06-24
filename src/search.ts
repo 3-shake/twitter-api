@@ -2,6 +2,16 @@ import fetch, { Response } from 'node-fetch'
 import { ServiceObject } from './service'
 import { Twitter } from './twitter'
 import { TweetMetadata } from './tweet'
+import {
+  Expansions,
+  MediaFields,
+  Meta,
+  Pagination,
+  PlaceFields,
+  PollFields,
+  TweetFields,
+  UserFields,
+} from './type'
 
 export interface SearchResponse extends Response {
   json(): Promise<{

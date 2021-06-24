@@ -1,4 +1,4 @@
-type Expansions =
+export type Expansions =
   | 'attachments.poll_ids'
   | 'attachments.media_keys'
   | 'author_id'
@@ -8,7 +8,7 @@ type Expansions =
   | 'referenced_tweets.id'
   | 'referenced_tweets.id.author_id'
 
-type MediaFields =
+export type MediaFields =
   | 'duration_ms'
   | 'height'
   | 'media_key'
@@ -21,14 +21,14 @@ type MediaFields =
   | 'organic_metrics'
   | 'promoted_metrics'
 
-type PollFields =
+export type PollFields =
   | 'duration_minutes'
   | 'end_datetime'
   | 'id'
   | 'options'
   | 'voting_status'
 
-type TweetFields =
+export type TweetFields =
   | 'attachments'
   | 'author_id'
   | 'context_annotations'
@@ -50,7 +50,7 @@ type TweetFields =
   | 'text'
   | 'withheld'
 
-type UserFields =
+export type UserFields =
   | 'created_at'
   | 'description'
   | 'entities'
@@ -66,7 +66,7 @@ type UserFields =
   | 'verified'
   | 'withheld'
 
-type PlaceFields =
+export type PlaceFields =
   | 'contained_within'
   | 'country'
   | 'country_code'
@@ -76,14 +76,14 @@ type PlaceFields =
   | 'name'
   | 'place_type'
 
-type Meta = {
+export type Meta = {
   newest_id?: string
   oldest_id?: string
   result_count?: number
   next_token?: string
 }
 
-type Pagination = {
+export type Pagination = {
   next_token?: string
 
   pagination?: boolean
