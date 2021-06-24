@@ -3,7 +3,7 @@
   "author": "locona (miyamae@3-shake.com)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "scripts": {
     "build:types": "NODE_ENV=production tsc",
     "build:types:watch": "NODE_ENV=production tsc --watch",
