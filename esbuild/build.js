@@ -9,6 +9,7 @@ require('esbuild')
     bundle: true,
     minify: true,
     sourcemap: false,
+    format: 'cjs',
   })
   .then((event) => {
     console.log('============================')

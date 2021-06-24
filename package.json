@@ -1,8 +1,8 @@
 {
   "name": "@3-shake/twitter-api",
-  "author": "locona(miyamae@3-shake.com)",
+  "author": "locona (miyamae@3-shake.com)",
   "main": "lib/index.js",
-  "types": "lib/types/index.d.ts",
+  "types": "lib/index.d.ts",
   "version": "0.2.1",
   "scripts": {
     "build:types": "NODE_ENV=production tsc",

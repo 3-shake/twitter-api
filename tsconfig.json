@@ -25,15 +25,15 @@
         "experimentalDecorators": true,
         "downlevelIteration": true,
         "declaration": true,
-        "declarationDir": "lib/types",
         "esModuleInterop": true,
         "pretty": true
     },
     "include": [
-        "typings/**/*",
-        "src/**/*"
+        "src"
     ],
     "exclude": [
+        "node_modules",
+        "lib",
         "example"
     ]
 }
