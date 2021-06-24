@@ -1,6 +1,6 @@
 {
   "name": "twitter-api",
-  "author": "",
+  "author": "locona(miyamae@3-shake.com)",
   "version": "0.0.1",
   "description": "",
   "main": "./lib/index.js",
@@ -10,7 +10,8 @@
     "build:js": "NODE_ENV=production node ./esbuild/build.js",
     "build:js:watch": "NODE_ENV=production node ./esbuild/watch.js",
     "build": "yarn build:types && yarn build:js",
-    "dev": "ts-node ./lib/index.js"
+    "dev": "ts-node ./lib/index.js",
+    "release": "shipjs prepare"
   },
   "license": "ISC",
   "files": [
@@ -22,6 +23,8 @@
     "@types/request": "2.48.5",
     "dotenv": "8.6.0",
     "esbuild": "0.11.20",
+    "prettier": "2.3.1",
+    "shipjs": "0.23.3",
     "ts-node": "9.1.1",
     "typescript": "4.2.4"
   },
@@ -29,5 +32,8 @@
     "node-fetch": "^2.6.1",
     "oauth-1.0a": "^2.2.6",
     "querystring": "^0.2.1"
+  },
+  "volta": {
+    "node": "14.17.1"
   }
 }
