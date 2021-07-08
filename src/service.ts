@@ -1,10 +1,14 @@
 import { Response } from 'node-fetch'
 import { Pagination } from './type'
+import { TwitterOAuth } from './oauth'
 
 export interface ServiceConfig {}
 
 export interface ServiceOptions {
   token: string
+  oauthToken: string
+  oauthTokenSecret: string
+  oauth: TwitterOAuth
   timeout?: number // http.request.options.timeout
 }
 
@@ -12,11 +16,24 @@ export interface ServiceObjectConfig {}
 
 export class Service {
   token: string
+  oauthToken: string
+  oauthTokenSecret: string
+  oauth: TwitterOAuth
   timeout?: number
 
   constructor(_: ServiceConfig, options: ServiceOptions) {
     this.token = options.token
+    this.oauthToken = options.oauthToken
+    this.oauthTokenSecret = options.oauthTokenSecret
+    this.oauth = options.oauth
     this.timeout = options.timeout
+  }
+
+  makeRequest(url: string, method: string) {
+    this.oauth.authorization(url, method, {
+      key: this.oauthToken,
+      secret: this.oauthTokenSecret,
+    })
   }
 }
 

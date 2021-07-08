@@ -186,24 +186,37 @@ export class Tweet extends ServiceObject {
 
   list(options: ListTweetsRequest): Promise<ListTweetsResponse> {
     const path = '/2/tweets'
+    const method = 'GET'
     const params = new URLSearchParams(options as {})
+    const url = `${this.apiEndpoint}${path}?` + params
+    const authHeader = this.twitter.oauth.authorization(url, method, {
+      key: this.twitter.oauthToken,
+      secret: this.twitter.oauthTokenSecret,
+    })
 
-    return fetch(`${this.apiEndpoint}${path}?` + params, {
-      method: 'GET',
+    return fetch(url, {
+      method: method,
       headers: {
-        authorization: `Bearer ${this.twitter.token}`,
+        authorization: authHeader['Authorization'],
       },
     })
   }
 
   get(id: string, options: GetTweetsRequest): Promise<GetTweetsResponse> {
     const path = `/2/tweets/${id}`
+    const method = 'GET'
     const params = new URLSearchParams(options as {})
+    const url = `${this.apiEndpoint}${path}?` + params
 
-    return fetch(`${this.apiEndpoint}${path}?` + params, {
-      method: 'GET',
+    const authHeader = this.twitter.oauth.authorization(url, method, {
+      key: this.twitter.oauthToken,
+      secret: this.twitter.oauthTokenSecret,
+    })
+
+    return fetch(url, {
+      method: method,
       headers: {
-        authorization: `Bearer ${this.twitter.token}`,
+        authorization: authHeader['Authorization'],
       },
     })
   }

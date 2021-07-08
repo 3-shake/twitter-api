@@ -32,6 +32,18 @@ export class TwitterOAuth {
     this.oauth = createOauthClient(consumerKey, consumerSecret)
   }
 
+  authorization(url: string, method: string, token: OAuth.Token): OAuth.Header {
+    return this.oauth.toHeader(
+      this.oauth.authorize(
+        {
+          url: url,
+          method: method,
+        },
+        token
+      )
+    )
+  }
+
   async requestToken(callbackURL: string): Promise<OAuthToken> {
     const encodedCallbackURL = encodeURIComponent(callbackURL)
     const requestTokenURL = `https://api.twitter.com/oauth/request_token?oauth_callback=${encodedCallbackURL}`

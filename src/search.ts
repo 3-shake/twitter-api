@@ -60,13 +60,19 @@ export class Search extends ServiceObject {
   recent(options: SearchRequest): Promise<SearchResponse> {
     delete options.pagination
 
+    const method = 'GET'
     const path = '/2/tweets/search/recent'
     const params = new URLSearchParams(options as {})
+    const url = `${this.apiEndpoint}${path}?` + params
+    const authHeader = this.twitter.oauth.authorization(url, method, {
+      key: this.twitter.oauthToken,
+      secret: this.twitter.oauthTokenSecret,
+    })
 
-    return fetch(`${this.apiEndpoint}${path}?` + params, {
-      method: 'GET',
+    return fetch(url, {
+      method: method,
       headers: {
-        authorization: `Bearer ${this.twitter.token}`,
+        authorization: authHeader['Authorization'],
       },
     })
   }
