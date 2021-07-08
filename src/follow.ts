@@ -159,13 +159,19 @@ export class Follow extends ServiceObject {
     delete options.pagination
     delete options.next_token
 
+    const method = 'GET'
     const path = `/2/users/${this.id}/followers`
     const params = new URLSearchParams(options as {})
+    const url = `${this.apiEndpoint}${path}?` + params
+    const authHeader = this.twitter.oauth.authorization(url, method, {
+      key: this.twitter.oauthToken,
+      secret: this.twitter.oauthTokenSecret,
+    })
 
-    return fetch(`${this.apiEndpoint}${path}?` + params, {
-      method: 'GET',
+    return fetch(url + params, {
+      method,
       headers: {
-        authorization: `Bearer ${this.twitter.token}`,
+        authorization: authHeader['Authorization'],
       },
     })
   }
@@ -180,34 +186,53 @@ export class Follow extends ServiceObject {
     delete options.pagination
     delete options.next_token
 
+    const method = 'GET'
     const path = `/2/users/${this.id}/following`
     const params = new URLSearchParams(options as {})
+    const url = `${this.apiEndpoint}${path}?` + params
+    const authHeader = this.twitter.oauth.authorization(url, method, {
+      key: this.twitter.oauthToken,
+      secret: this.twitter.oauthTokenSecret,
+    })
 
-    return fetch(`${this.apiEndpoint}${path}?` + params, {
-      method: 'GET',
+    return fetch(url, {
+      method: method,
       headers: {
-        authorization: `Bearer ${this.twitter.token}`,
+        authorization: authHeader['Authorization'],
       },
     })
   }
 
   following(payload: FollowingRequest): Promise<FollowingResponse> {
+    const method = 'POST'
     const path = `/2/users/${this.id}/following`
-    return fetch(`${this.apiEndpoint}${path}?`, {
-      method: 'POST',
+    const url = `${this.apiEndpoint}${path}?`
+    const authHeader = this.twitter.oauth.authorization(url, method, {
+      key: this.twitter.oauthToken,
+      secret: this.twitter.oauthTokenSecret,
+    })
+    return fetch(url, {
+      method: method,
       body: JSON.stringify(payload),
       headers: {
-        authorization: `Bearer ${this.twitter.token}`,
+        authorization: authHeader['Authorization'],
       },
     })
   }
 
   unfollow(targetId: string): Promise<UnfollowingResponse> {
+    const method = 'DELETE'
     const path = `/2/users/${this.id}/following/${targetId}`
-    return fetch(`${this.apiEndpoint}${path}?`, {
-      method: 'DELETE',
+    const url = `${this.apiEndpoint}${path}?`
+    const authHeader = this.twitter.oauth.authorization(url, method, {
+      key: this.twitter.oauthToken,
+      secret: this.twitter.oauthTokenSecret,
+    })
+
+    return fetch(url, {
+      method: method,
       headers: {
-        authorization: `Bearer ${this.twitter.token}`,
+        authorization: authHeader['Authorization'],
       },
     })
   }
