@@ -2,9 +2,9 @@
   "version": "v1",
   "packages": {
     "@3-shake/twitter-api": {
-      "signature": "33fd925399250b1c68238d7468d29ba5",
+      "signature": "2e49fc9b2df914f7ba52e235d908e10b",
       "file": true,
-      "replaced": "0.2.1"
+      "replaced": "0.2.2"
     }
   }
 }
