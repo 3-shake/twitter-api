@@ -1,3 +1,12 @@
+## [0.2.3](https://github.com/3-shake/twitter-api/compare/v0.2.2...v0.2.3) (2021-07-08)
+
+
+### Bug Fixes
+
+* use bearer token ([#8](https://github.com/3-shake/twitter-api/issues/8)) ([25fdfdb](https://github.com/3-shake/twitter-api/commit/25fdfdbf5f683bbcea6ce9a6ae6a9b5d87f57dd7))
+
+
+
 ## [0.2.2](https://github.com/3-shake/twitter-api/compare/v0.2.1...v0.2.2) (2021-06-24)
 
 
