@@ -27,7 +27,7 @@ const { CONSUMER_KEY, CONSUMER_SECRET } = process.env
   })
 
   const response = await twitter
-    .post()
+    .statuses()
     .update({ status: 'twitterAPIから送信test' })
 
   const json = await response.json()
