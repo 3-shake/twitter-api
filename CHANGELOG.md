@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/3-shake/twitter-api/compare/v0.2.3...v0.3.0) (2021-07-19)
+
+
+### Features
+
+* tweetAPIの作成 ([#10](https://github.com/3-shake/twitter-api/issues/10)) ([c58aaa1](https://github.com/3-shake/twitter-api/commit/c58aaa1e31df2b278fca3a92a43de33cfdd28881))
+
+
+
 ## [0.2.3](https://github.com/3-shake/twitter-api/compare/v0.2.2...v0.2.3) (2021-07-08)
 
 
