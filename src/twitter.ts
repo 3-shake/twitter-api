@@ -1,16 +1,10 @@
-import { Service } from './service'
-import { TwitterOAuth } from './oauth'
+import { Service, ServiceOptions } from './service'
+
 import { Tweet } from './tweet'
 import { Follow } from './follow'
 import { Timeline } from './timeline'
 import { Search } from './search'
 import { Statuses } from './statuses'
-export interface TwitterOptions {
-  token: string
-  oauthToken: string
-  oauthTokenSecret: string
-  oauth: TwitterOAuth
-}
 
 export class Twitter extends Service {
   static Follow: typeof Follow = Follow
@@ -21,7 +15,7 @@ export class Twitter extends Service {
 
   static Tweet: typeof Tweet = Tweet
   static Statuses: typeof Statuses = Statuses
-  constructor(options: TwitterOptions) {
+  constructor(options: ServiceOptions) {
     super({}, options)
   }
 

@@ -195,8 +195,6 @@ export class Tweet extends ServiceObject {
       secret: this.twitter.oauthTokenSecret,
     })
 
-    console.log(authHeader['Authorization'])
-
     return fetch(url, {
       method: method,
       headers: {
