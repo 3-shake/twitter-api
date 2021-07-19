@@ -1,4 +1,4 @@
-import { Twitter, TwitterOAuth } from '@3-shake/twitter-api'
+import { TwitterOAuth, Twitter } from '@3-shake/twitter-api'
 import * as dotenv from 'dotenv'
 dotenv.config()
 
@@ -9,27 +9,27 @@ const { CONSUMER_KEY, CONSUMER_SECRET } = process.env
   console.log(oauthToken)
   console.log(await oauth.authorizeURL(oauthToken))
 
-  // console.log(
-  //   await oauth.accessToken(
-  //     {
-  //       oauth_token: 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
-  //       oauth_token_secret: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-  //     },
-  //     '2273904'
-  //   )
-  // )
+  console.log(
+    await oauth.accessToken(
+      {
+        oauth_token: 'XXXXXXXXXX',
+        oauth_token_secret: 'XXXXXXXXXX',
+      },
+      'XXXXXXXXXX'
+    )
+  )
 
   const twitter = new Twitter({
     token: '',
-    oauthToken: 'dddddddddddddddddddddddddddddddddddddddddddddddddd',
-    oauthTokenSecret: 'ddddddddddddddddddddddddddddddddddddddddddddd',
+    oauthToken: 'XXXXXXXXXX-XXXXXXXXXX',
+    oauthTokenSecret: 'XXXXXXXXXX',
     oauth,
   })
-  const response = await twitter.tweet().list({
-    ids: '1278747501642657792,1255542774432063488', // Edit Tweet IDs to look up
-    'tweet.fields': 'author_id', // Edit optional query parameters here
-    'user.fields': 'created_at', // Edit optional query parameters here
-  })
+
+  const response = await twitter
+    .statuses()
+    .update({ status: `XXXXXX\n` + 'XXXXXXXXX' })
+
   const json = await response.json()
   console.log(json)
 })()

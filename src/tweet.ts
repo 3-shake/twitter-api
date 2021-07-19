@@ -189,6 +189,7 @@ export class Tweet extends ServiceObject {
     const method = 'GET'
     const params = new URLSearchParams(options as {})
     const url = `${this.apiEndpoint}${path}?` + params
+
     const authHeader = this.twitter.oauth.authorization(url, method, {
       key: this.twitter.oauthToken,
       secret: this.twitter.oauthTokenSecret,

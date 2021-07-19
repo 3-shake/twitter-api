@@ -1,10 +1,10 @@
 import { Service, ServiceOptions } from './service'
+
 import { Tweet } from './tweet'
 import { Follow } from './follow'
 import { Timeline } from './timeline'
 import { Search } from './search'
-
-export interface TwitterOptions extends ServiceOptions {}
+import { Statuses } from './statuses'
 
 export class Twitter extends Service {
   static Follow: typeof Follow = Follow
@@ -14,8 +14,8 @@ export class Twitter extends Service {
   static Timeline: typeof Timeline = Timeline
 
   static Tweet: typeof Tweet = Tweet
-
-  constructor(options: TwitterOptions) {
+  static Statuses: typeof Statuses = Statuses
+  constructor(options: ServiceOptions) {
     super({}, options)
   }
 
@@ -33,5 +33,8 @@ export class Twitter extends Service {
 
   tweet(): Tweet {
     return new Tweet(this)
+  }
+  statuses(): Statuses {
+    return new Statuses(this)
   }
 }
