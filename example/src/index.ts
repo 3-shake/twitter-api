@@ -12,23 +12,23 @@ const { CONSUMER_KEY, CONSUMER_SECRET } = process.env
   console.log(
     await oauth.accessToken(
       {
-        oauth_token: 'yrp6AwAAAAABQ_LBAAABeqRWdPs',
-        oauth_token_secret: 'Pc3UJjXQEoWp20Qu4egQqeoFVeJq1gVi',
+        oauth_token: 'XXXXXXXXXX',
+        oauth_token_secret: 'XXXXXXXXXX',
       },
-      '0194098'
+      'XXXXXXXXXX'
     )
   )
 
   const twitter = new Twitter({
     token: '',
-    oauthToken: '1178600698847477760-d3rsfIFVPxGzl8hl3kvUtyqXXFRBrP',
-    oauthTokenSecret: 'ZaopayaQWTfXnJCiym55lpL8bkTRLcTUeVJXNOoictNaK',
+    oauthToken: 'XXXXXXXXXX-XXXXXXXXXX',
+    oauthTokenSecret: 'XXXXXXXXXX',
     oauth,
   })
 
   const response = await twitter
     .statuses()
-    .update({ status: 'twitterAPIから送信test' })
+    .update({ status: `XXXXXX\n` + 'XXXXXXXXX' })
 
   const json = await response.json()
   console.log(json)
